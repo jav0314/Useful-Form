@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/icon.png" />
+    <link rel="stylesheet" type="text/css" href="./src/Styles/main.css" />
+    <title>Sign Up Form</title>
+  </head>
+  <body>
+    <div>
+      <form id="formTest" action="index.html" method="post">
+        <h1>Sign Up</h1>
+
+        <fieldset>
+          <legend><span class="number">1</span> Your Basic Info</legend>
+
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="user_name" />
+            <div id="nameAlert" role="alert"></div>
+          </div>
+
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="mail" name="user_email" />
+            <div id="emailAlert" role="alert"></div>
+          </div>
+
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="user_password" />
+            <div id="passwordAlert" role="alert"></div>
+          </div>
+
+          <div>
+            <label>Age:</label><br />
+            <div>
+              <input
+                type="radio"
+                id="under_13"
+                value="under_13"
+                name="user_age"
+              />
+              <label for="under_13">Under 13</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="over_13"
+                value="over_13"
+                name="user_age"
+              />
+              <label for="over_13">Over 13</label>
+            </div>
+            <div id="ageAlert" role="alert"></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="number">2</span> Your Profile</legend>
+
+          <div>
+            <label for="bio">Bio:</label>
+            <textarea id="bio" name="user_bio"></textarea>
+            <div id="bioAlert" role="alert"></div>
+          </div>
+
+          <div>
+            <label for="job">Job Role:</label>
+            <select id="job" name="user_job">
+              <optgroup label="Web">
+                <option selected="true" value="frontend_developer">
+                  Front-End Developer
+                </option>
+                <option value="php_developer">PHP Developer</option>
+                <option value="python_developer">Python Developer</option>
+                <option value="rails_developer">Rails Developer</option>
+                <option value="web_designer">Web Designer</option>
+                <option value="wordpress_developer">Wordpress Developer</option>
+              </optgroup>
+              <optgroup label="Mobile">
+                <option value="android_developer">Android Developer</option>
+                <option value="ios_developer">IOS Developer</option>
+                <option value="mobile_designer">Mobile Designer</option>
+              </optgroup>
+              <optgroup label="Business">
+                <option value="business_owner">Business Owner</option>
+                <option value="freelancer">Freelancer</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div>
+            <label>Interests:</label><br />
+            <div>
+              <input
+                type="checkbox"
+                id="development"
+                value="interest_development"
+                name="user_interest"
+              />
+              <label for="development">Development</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="design"
+                value="interest_design"
+                name="user_interest"
+              />
+              <label for="design">Design</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="business"
+                value="interest_business"
+                name="user_interest"
+              />
+              <label for="business">Business</label>
+            </div>
+          </div>
+        </fieldset>
+        <h4>Github: @Jav0314</h4>
+
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+    <script type="module" src="./src/js/main.js" defer></script>
+  </body>
+</html>
