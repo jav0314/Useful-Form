@@ -1,38 +1,17 @@
 export function validPassword(password) {
   let level = 0;
   let alert = "";
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d]).{8,}$/;
 
-  if (password.length < 8) {
-    alert += " Tiene que tener al menos 8 caracteres. ";
-  } else {
-    level += 1;
-  }
-
-  if (password.match(/[a-z]/) && password.match(/[A-Z]/)) {
+  if (regex.test(password)) {
     level += 1;
   } else {
-    alert += " Usar mayúsculas y minúsculas. ";
+    alert += " No cumple con los requisitos establecidos.";
   }
 
-  if (password.match(/\d/)) {
-    level += 1;
+  if (level < 1) {
+    return "Contraseña invalida. " + alert;
   } else {
-    alert += " Mínimo 1 número. ";
-  }
-
-  if (password.match(/[^a-zA-Z\d]/)) {
-    level += 1;
-  } else {
-    alert += " Mínimo un carácter especial. ";
-  }
-
-  if (level < 2) {
-    return "Contraseña fácil. " + alert;
-  } else if (level === 2) {
-    return "Contraseña de media dificultad. " + alert;
-  } else if (level === 3) {
-    return "Contraseña difícil. " + alert;
-  } else {
-    return "Contraseña muy difícil. " + alert;
+    return "Contraseña cumple los requisitos. " + alert;
   }
 }
